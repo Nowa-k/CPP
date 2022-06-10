@@ -6,7 +6,7 @@
 /*   By: aleferra <aleferra@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 11:48:42 by aleferra          #+#    #+#             */
-/*   Updated: 2022/06/09 14:20:15 by aleferra         ###   ########.fr       */
+/*   Updated: 2022/06/10 11:30:27 by aleferra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,25 @@
 #define RED "\e[0;31m"
 #define GRN "\e[0;32m"
 
-std::string	strReplace(const std::string str, const std::string s1, std::string s2)
+std::string	strReplace(const std::string str, std::string s1, std::string s2)
 {
-	int	i;
+	size_t	i;
+	size_t	j;
 	std::string	newStr;
 	
 	i = -1;
 	while (str[++i])
 	{
-		
+		j = 0;
+		while (str[i + j] && str[i + j] == s1[j])
+			j++;
+		if (j == s1.length())
+		{
+			newStr += s2;
+			i += j - 1;
+		}
+		else
+			newStr += str[i];
 	}
 	return (newStr);
 }

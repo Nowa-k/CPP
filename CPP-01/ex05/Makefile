@@ -1,6 +1,7 @@
-NAME = SED
+NAME = Harl
 
-SRC =	main.cpp
+SRC =	main.cpp	\
+		Harl.cpp
 
 CC = g++
 FLAGS = -Wall -Wextra -Werror --std=c++98
@@ -8,7 +9,7 @@ OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp Harl.hpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
