@@ -6,7 +6,7 @@
 /*   By: aleferra <aleferra@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 11:48:42 by aleferra          #+#    #+#             */
-/*   Updated: 2022/06/10 11:30:27 by aleferra         ###   ########.fr       */
+/*   Updated: 2022/06/11 12:57:16 by aleferra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int main(int argc, char **argv)
 		{
 			file_out.open(rfilename, std::ios_base::out);
 			if (!file_out.is_open())
-				std::cout << RED << "Could not open the file replace. " << rfilename << std::cout;
+				std::cout << RED << "Could not open the file replace. " << rfilename << std::endl;
 			else
 			{
 				while (std::getline(inputFile, line))

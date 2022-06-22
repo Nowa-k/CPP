@@ -6,24 +6,21 @@
 /*   By: aleferra <aleferra@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 13:56:24 by aleferra          #+#    #+#             */
-/*   Updated: 2022/06/11 12:18:18 by aleferra         ###   ########.fr       */
+/*   Updated: 2022/06/11 12:30:29 by aleferra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.h"
 
-int main(void)
+int main(int argc, char **argv)
 {
-	Harl h = Harl();
-	h.complain("yrdy");
-	std::cout << "---------------------------" << std::endl;
-	h.complain("WARNING");
-	std::cout << "---------------------------" << std::endl;
-	h.complain("ERROR");
-	std::cout << "---------------------------" << std::endl;
-	h.complain("test");
-	std::cout << "---------------------------" << std::endl;
-	h.complain("INFO");
-	std::cout << "---------------------------" << std::endl;
-	h.complain("DEBUG");	
+	if (argc == 2)
+	{
+		Harl h = Harl();
+		h.complain(argv[1]);
+		return (1);
+	}
+	else
+		std::cout << GRN << "Exemple : ./harlFilter [Level] {DEBUG, INFO, WARNING, ERROR}" << WHT << std::endl;
+	return (0);
 }
