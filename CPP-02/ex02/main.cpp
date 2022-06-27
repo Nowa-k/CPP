@@ -6,7 +6,7 @@
 /*   By: aleferra <aleferra@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 11:42:11 by aleferra          #+#    #+#             */
-/*   Updated: 2022/06/23 17:14:56 by aleferra         ###   ########.fr       */
+/*   Updated: 2022/06/27 12:07:55 by aleferra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main( void )
 int main( void )
 {
 	Fixed a;
-	Fixed const b(Fixed(42.42f) * Fixed(42));
+	Fixed const b(Fixed(42.42f) / Fixed(42));
 
 	std::cout << a << std::endl;
 	std::cout << a++ << std::endl;

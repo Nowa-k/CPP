@@ -6,7 +6,7 @@
 /*   By: aleferra <aleferra@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 12:31:19 by aleferra          #+#    #+#             */
-/*   Updated: 2022/06/23 17:10:49 by aleferra         ###   ########.fr       */
+/*   Updated: 2022/06/27 11:53:00 by aleferra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,14 +104,14 @@ bool Fixed::operator!= (const Fixed &f) const
 Fixed Fixed::operator+ (const Fixed &f)
 {
 	Fixed(res);
-	res = this->value + f.value;
+	res = value + f.value;
 	return (res);
 }
 
 Fixed Fixed::operator- (const Fixed &f)
 {
 	Fixed(res);
-	res = this->value - f.value;
+	res = value - f.value;
 	return (res);
 }
 
