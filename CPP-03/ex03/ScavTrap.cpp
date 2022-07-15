@@ -6,7 +6,7 @@
 /*   By: aleferra < aleferra@student.42lyon.fr >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:44:48 by aleferra          #+#    #+#             */
-/*   Updated: 2022/06/28 16:37:14 by aleferra         ###   ########.fr       */
+/*   Updated: 2022/06/29 15:41:44 by aleferra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 ScavTrap::ScavTrap()
 {
-    _name = "Bob";
 	_HitPoint = 100;
 	_EnergyPoint = 50;
 	_AttackDamage = 20;
-	std::cout << GRN << "Create Scavtrav " << std::endl;
+	std::cout << GRN << "Create Scavtrap " << std::endl;
 }
 
 ScavTrap::ScavTrap( std::string name)
@@ -27,7 +26,7 @@ ScavTrap::ScavTrap( std::string name)
 	_HitPoint = 100;
 	_EnergyPoint = 50;
 	_AttackDamage = 20;
-	std::cout << GRN << "Create Scavtrav" << std::endl;
+	std::cout << GRN << "Create Scavtrap" << std::endl;
 }
 
 ScavTrap::ScavTrap( const ScavTrap &s)
@@ -46,6 +45,7 @@ ScavTrap::~ScavTrap()
 
 ScavTrap &ScavTrap::operator=( const ScavTrap &s )
 {
+	std::cout << GRN << "Create Scavtrap" << std::endl;
     _name = s._name;
     _HitPoint = s._HitPoint;
     _EnergyPoint = s._EnergyPoint;

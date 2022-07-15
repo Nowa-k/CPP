@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aleferra < aleferra@student.42lyon.fr >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 12:12:35 by aleferra          #+#    #+#             */
-/*   Updated: 2022/06/29 15:58:22 by aleferra         ###   ########.fr       */
+/*   Created: 2022/06/27 16:44:55 by aleferra          #+#    #+#             */
+/*   Updated: 2022/06/28 17:06:21 by aleferra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "Scavtrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int main(void)
+# include <iostream>
+# include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
-	ClapTrap A;
-	ClapTrap B("Roger");
-	ScavTrap E("Jean");
+	public :
+		FragTrap();
+		FragTrap( std::string );
+		FragTrap( const FragTrap & );
+		~FragTrap();
+		FragTrap &operator=( const FragTrap &);
+	
+		void highFivesGuys(void);
+};
 
-	A.printInfo();
-	A.attack("Roger");
-	E.printInfo();
-	E.guardGate();
-	E.attack("Roger");
-	E.printInfo();
-	A.printInfo();
-	B.printInfo();
-}
+#endif

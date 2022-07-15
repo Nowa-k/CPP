@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Scavtrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aleferra < aleferra@student.42lyon.fr >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 12:12:35 by aleferra          #+#    #+#             */
-/*   Updated: 2022/06/29 15:58:22 by aleferra         ###   ########.fr       */
+/*   Created: 2022/06/27 16:44:55 by aleferra          #+#    #+#             */
+/*   Updated: 2022/06/29 11:53:34 by aleferra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "Scavtrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int main(void)
+# include <iostream>
+# include "ClapTrap.hpp"
+
+class ScavTrap : virtual public ClapTrap
 {
-	ClapTrap A;
-	ClapTrap B("Roger");
-	ScavTrap E("Jean");
+	public :
+		ScavTrap();
+		ScavTrap( std::string );
+		ScavTrap( const ScavTrap & );
+		virtual ~ScavTrap();
+		ScavTrap &operator=( const ScavTrap &);
+	
+		void guardGate();
+		void attack(const std::string &);
+};
 
-	A.printInfo();
-	A.attack("Roger");
-	E.printInfo();
-	E.guardGate();
-	E.attack("Roger");
-	E.printInfo();
-	A.printInfo();
-	B.printInfo();
-}
+#endif

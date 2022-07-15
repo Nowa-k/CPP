@@ -6,7 +6,7 @@
 /*   By: aleferra < aleferra@student.42lyon.fr >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:12:48 by aleferra          #+#    #+#             */
-/*   Updated: 2022/06/28 17:26:39 by aleferra         ###   ########.fr       */
+/*   Updated: 2022/06/29 14:10:45 by aleferra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap()
 	_HitPoint = 10;
 	_EnergyPoint = 10;
 	_AttackDamage = 0;
-	std::cout << GRN << "Create Clap" << std::endl;
+	std::cout << GRN << "Create Clap n name" << std::endl;
 }
 
 ClapTrap::ClapTrap (std:: string name)
@@ -28,7 +28,8 @@ ClapTrap::ClapTrap (std:: string name)
 	_HitPoint = 10;
 	_EnergyPoint = 10;
 	_AttackDamage = 0;
-	std::cout << GRN << "Create Clap" << std::endl; 
+	std::cout << RED << ClapTrap::getName() << std::endl;
+	std::cout << GRN << "Create Clap w name" << std::endl; 
 }
 
 ClapTrap::ClapTrap(const ClapTrap &c)
@@ -97,10 +98,25 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 void ClapTrap::printInfo( void )
 {
-	std::cout << WHT << _name << ", Hitpoint " << _HitPoint << ", EnergyPoint " << _EnergyPoint << ", AttackDmg " << _AttackDamage << std::endl;
+	std::cout << WHT << ClapTrap::getName () << ", Hitpoint " << ClapTrap::getHitPoint() << ", EnergyPoint " << ClapTrap::getEnergyPoint() << ", AttackDmg " << ClapTrap::getAttackDamage() << std::endl;
 }
 
-std::string ClapTrap::getName ()
+std::string ClapTrap::getName (void)
 {
-	return _name;
+	return this->_name;
+}
+
+int ClapTrap::getEnergyPoint()
+{
+	return this->_EnergyPoint;
+}
+
+int ClapTrap::getHitPoint()
+{
+	return this->_HitPoint;
+}
+
+int ClapTrap::getAttackDamage()
+{
+	return this->_AttackDamage;
 }

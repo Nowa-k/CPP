@@ -6,7 +6,7 @@
 /*   By: aleferra < aleferra@student.42lyon.fr >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:13:04 by aleferra          #+#    #+#             */
-/*   Updated: 2022/06/28 15:37:39 by aleferra         ###   ########.fr       */
+/*   Updated: 2022/06/29 15:18:14 by aleferra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,12 @@ public :
 	void attack(const std::string &target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
-	std::string getName( void );
+	std::string getName( void ) ;
 	void printInfo( void );
+
+	int getHitPoint();
+	int getEnergyPoint();
+	int getAttackDamage();
 };
       
 #endif
