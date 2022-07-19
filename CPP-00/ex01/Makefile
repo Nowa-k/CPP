@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aleferra <aleferra@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: aleferra < aleferra@student.42lyon.fr >    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 10:42:43 by aleferra          #+#    #+#              #
-#    Updated: 2022/05/27 11:19:58 by aleferra         ###   ########.fr        #
+#    Updated: 2022/07/19 11:50:07 by aleferra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aleferra <aleferra@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: aleferra < aleferra@student.42lyon.fr >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 13:34:49 by aleferra          #+#    #+#             */
-/*   Updated: 2022/06/07 12:04:58 by aleferra         ###   ########.fr       */
+/*   Updated: 2022/07/19 15:07:41 by aleferra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,9 +111,15 @@ void	Account::displayAccountsInfos( void )
 
 void	Account::makeDeposit( int deposit )
 {
+	_displayTimestamp();
 	_nbDeposits += 1;
-	_amount += deposit;
 	_totalNbDeposits += 1;
+	std::cout << "index:" << _accountIndex;
+	std::cout << ";p_amount:" << _amount;
+	std::cout << ";deposit:" << deposit;
+	_amount += deposit;
+	std::cout << ";amount:" << _amount;
+	std::cout << ";nb_deposit:" << _nbDeposits<< std::endl;
 	_totalAmount += deposit;
 }
 
@@ -135,7 +141,7 @@ void	Account::displayStatus() const
 
 void	Account::_displayTimestamp()
 {
-	std::time_t now;
+	time_t now;
 	struct tm *local;
 
 	now = 0;

@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aleferra <aleferra@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: aleferra < aleferra@student.42lyon.fr >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 16:32:46 by aleferra          #+#    #+#             */
-/*   Updated: 2022/06/01 11:57:00 by aleferra         ###   ########.fr       */
+/*   Updated: 2022/07/19 11:47:09 by aleferra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
-#include <string>
-#include <iostream>
-#define GRN "\e[0;32m"
-#define NC "\e[0m"
-#define RED "\e[0;31m"
-#define BLU "\e[0;34m"
 
 Phonebook::Phonebook()
 {
@@ -95,6 +89,11 @@ void Phonebook::limitPrint(std::string str)
 	}
 	if (str.length() > 9)
 		std::cout << ".";
+	else
+	{
+		for (int b = i; b < 10; b++)
+			std::cout << " "; 
+	}
 		
 }
 
@@ -106,11 +105,11 @@ void	Phonebook::addContact()
 	if (count > 7)
 		count = 0;
 	std::cout << GRN << "Take information of new contact" << std::endl; 
-	contact.firstname = completeBook("First name : ");
-	contact.lastname = completeBook("Last name : ");
-	contact.phonenumber = completePhone("Phone number :");
-	contact.nickname = completeBook("Nickname : ");
-	contact.darkestsecret = completeBook("Darkest secret : ");
+	contact.setFirstName(completeBook("First name : "));
+	contact.setLastName(completeBook("Last name : "));
+	contact.setPhone(completePhone("Phone number : "));
+	contact.setNickname(completeBook("Nickname : "));
+	contact.setDarkest(completeBook("Darkest secret : "));
 
 	Phonebook::contact[count] = contact;
 	count++;
@@ -123,14 +122,14 @@ void	Phonebook::search()
 	int pos;
 
 	val = 0;
-	while (!Phonebook::contact[val].firstname.empty() && val < 8)
+	while (!Phonebook::contact[val].getFirstName().empty() && val < 8)
 	{
 		std::cout << BLU << val + 1 << NC << " | ";
-		Phonebook::limitPrint(Phonebook::contact[val].firstname);
+		Phonebook::limitPrint(Phonebook::contact[val].getFirstName());
 		std::cout << " | ";
-		Phonebook::limitPrint(Phonebook::contact[val].lastname);
+		Phonebook::limitPrint(Phonebook::contact[val].getLastName());
 		std::cout << " | ";
-		Phonebook::limitPrint(Phonebook::contact[val].nickname);
+		Phonebook::limitPrint(Phonebook::contact[val].getNickname());
 		std::cout << std::endl;
 		val++;
 	}
@@ -147,7 +146,7 @@ void	Phonebook::search()
 				exit(0);
 		if (strIsDigit(index))
 		{
-			pos = stoi(index) - 1;
+			pos = std::stoi(index) - 1;
 			if (pos > -1 && pos < val)
 				break ;
 			else
@@ -156,11 +155,11 @@ void	Phonebook::search()
 		else
 			std::cout << RED << "Number : " << NC << std::endl;	
 	}
-	std::cout << BLU << "First name : " << NC << Phonebook::contact[pos].firstname << std::endl;
-	std::cout << BLU << "Last name : " << NC << Phonebook::contact[pos].lastname << std::endl;
-	std::cout << BLU << "Phone number : " << NC << Phonebook::contact[pos].phonenumber << std::endl;
-	std::cout << BLU << "Nickname : " << NC << Phonebook::contact[pos].nickname << std::endl;
-	std::cout << BLU << "Darkest secret : " << NC << Phonebook::contact[pos].darkestsecret << std::endl;
+	std::cout << BLU << "First name : " << NC << Phonebook::contact[pos].getFirstName() << std::endl;
+	std::cout << BLU << "Last name : " << NC << Phonebook::contact[pos].getLastName() << std::endl;
+	std::cout << BLU << "Phone number : " << NC << Phonebook::contact[pos].getPhone() << std::endl;
+	std::cout << BLU << "Nickname : " << NC << Phonebook::contact[pos].getNickname() << std::endl;
+	std::cout << BLU << "Darkest secret : " << NC << Phonebook::contact[pos].getDarkest() << std::endl;
 }
 
 void	Phonebook::pbExit()

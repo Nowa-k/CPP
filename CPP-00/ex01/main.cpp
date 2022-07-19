@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aleferra <aleferra@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: aleferra < aleferra@student.42lyon.fr >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 11:14:40 by aleferra          #+#    #+#             */
-/*   Updated: 2022/06/01 11:30:52 by aleferra         ###   ########.fr       */
+/*   Updated: 2022/07/19 11:43:29 by aleferra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main(void)
 		else if (cmd == "EXIT")
 			p.pbExit();
 		else
-			;
+			std::cout << "";
 		std::cout << std::endl;
 	}
 }
